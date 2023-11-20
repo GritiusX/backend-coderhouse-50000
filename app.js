@@ -3,9 +3,19 @@ class ProductManager {
 		this.products = [];
 	}
 	#validateProduct(product) {
+		const keysToCheck = [
+			"title",
+			"description",
+			"price",
+			"thumbnail",
+			"code",
+			"stock",
+		];
+		const hasAllKeys = keysToCheck.every((key) =>
+			Object.keys(product).includes(key)
+		);
 		const isEmpty = (value) =>
 			value === "" || value === undefined || value === null;
-
 		const emptyKeys = Object.keys(product).filter((key) =>
 			isEmpty(product[key])
 		);
@@ -15,8 +25,10 @@ class ProductManager {
 			? true
 			: false;
 
-		if (emptyKeys.length > 0) {
-			console.log("The following values are empty:", emptyKeys.join(", "));
+		if (emptyKeys.length > 0 || !hasAllKeys) {
+			console.log(
+				"The product you are trying to add has empty data, please check your settings and try again"
+			);
 			return false;
 		}
 		if (validateProductCodePropety) {
@@ -40,6 +52,7 @@ class ProductManager {
 
 	getProducts = () => {
 		console.log(this.products);
+		return this.products;
 	};
 
 	addProduct = (product) => {
@@ -97,9 +110,12 @@ const productToBeAdded4 = {
 	stock: 444,
 };
 productManager.addProduct(productToBeAdded);
-productManager.addProduct(productToBeAdded2);
+/* productManager.addProduct(productToBeAdded2);
 productManager.addProduct(productToBeAdded3);
 productManager.addProduct(productToBeAdded4);
-productManager.getProducts();
+console.log("=============");
+console.log("=============");
 productManager.getProductById(2);
-productManager.getProductById(6);
+productManager.getProductById(6); */
+
+productManager.getProducts();
