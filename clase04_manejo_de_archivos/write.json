@@ -1,0 +1,29 @@
+[
+  {
+    "title": "NEW TITLE OF THE PRODUCT 1 !!!!!",
+    "description": "Description 1",
+    "price": 66666,
+    "thumbnail": "someUrl.com",
+    "code": "111",
+    "stock": 111,
+    "id": 1
+  },
+  {
+    "title": "Product 2",
+    "description": "Description 2",
+    "price": 222,
+    "thumbnail": "someUrl2.com",
+    "code": "222",
+    "stock": 222,
+    "id": 2
+  },
+  {
+    "title": "Product 4",
+    "description": "Description 4",
+    "price": 444,
+    "thumbnail": "someUrl4.com",
+    "code": "444",
+    "stock": 444,
+    "id": 3
+  }
+]
