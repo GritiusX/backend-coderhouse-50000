@@ -81,16 +81,23 @@ class ProductManager {
 	#updateProduct(productToUpdate, dataToUpdate) {
 		const updatedProduct = { ...productToUpdate, ...dataToUpdate };
 
-		const productIndex = this.products.findIndex(
+		const products = this.#readFile();
+
+		const productIndex = products.findIndex(
 			(product) => product.id === productToUpdate.id
 		);
 
-		this.products[productIndex] = updatedProduct;
+		if (productIndex !== -1) {
+			products[productIndex] = updatedProduct;
 
-		this.#writeFile(this.products);
+			this.#writeFile(products);
 
-		console.log("Product updated successfully: ", updatedProduct);
-		return updatedProduct;
+			console.log("Product updated successfully: ", updatedProduct);
+			return updatedProduct;
+		}
+
+		console.log("There is no product with this id");
+		return null;
 	}
 
 	getProducts = () => {
@@ -123,7 +130,8 @@ class ProductManager {
 	};
 
 	updateProduct = (id, dataToUpdate) => {
-		const productToFind = this.products.find((product) => product.id === id);
+		const products = this.#readFile();
+		const productToFind = products.find((product) => product.id === id);
 
 		if (productToFind) {
 			return this.#updateProduct(productToFind, dataToUpdate);
@@ -209,11 +217,12 @@ productManager.getProductById(6);
 
 //Please use this Object to update any product:
 const dataToUpdate = {
-	title: "NEW TITLE OF THE PRODUCT 1 !!!!!",
-	price: 66666,
+	title: "probando nuevamenteeeee !!!!!",
+	price: 1111,
 };
 productManager.updateProduct(1, dataToUpdate);
 
+console.log("=============");
 productManager.getProducts();
 console.log("=============");
 
