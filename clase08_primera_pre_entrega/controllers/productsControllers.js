@@ -50,10 +50,27 @@ async function controllerAddProduct(req, res) {
 }
 async function controllerUpdateProduct(req, res) {
 	const { pid } = req.params;
-	console.log("req.body===>>>", req.body);
 	try {
 		let updatedProduct = productManager.updateProduct(parseInt(pid), req.body);
 		return res.status(200).json({ status: 200, payload: updatedProduct });
+	} catch (err) {
+		throw new Error("controllerUpdateProduct", err.message);
+	}
+}
+async function controllerDeleteProduct(req, res) {
+	const { pid } = req.params;
+	try {
+		const productToDelete = productManager.deleteProduct(parseInt(pid));
+		if (!productToDelete) {
+			return res.status(404).json({
+				status: 404,
+				payload: `There is no product with this Id: ${pid}`,
+			});
+		}
+		return res.status(200).json({
+			status: 200,
+			payload: `Product Id: ${pid} has been successfully deleted`,
+		});
 	} catch (err) {
 		throw new Error("controllerUpdateProduct", err.message);
 	}
@@ -64,4 +81,5 @@ module.exports = {
 	controllerGetProductById,
 	controllerAddProduct,
 	controllerUpdateProduct,
+	controllerDeleteProduct,
 };

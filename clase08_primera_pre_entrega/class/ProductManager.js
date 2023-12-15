@@ -18,8 +18,7 @@ class ProductManager {
 				product.thumbnails = [];
 			}
 			if (!title || !description || !code || !price || !stock) {
-				console.log("chequeate algo que falta");
-				console.log(product);
+				console.log("There are main properties missing in this product");
 				return false;
 			}
 
@@ -67,7 +66,6 @@ class ProductManager {
 	#writeFile(data) {
 		try {
 			fs.writeFileSync(this.path, JSON.stringify(data, null, 2));
-			console.log("Writing products: ", JSON.stringify(data, null, 2));
 			return true;
 		} catch (error) {
 			console.error("Error writing file:", error.message);
@@ -116,10 +114,10 @@ class ProductManager {
 
 		if (validateProductToAdd) {
 			const productWithId = { ...product, id: productId };
-			console.log("Item added successfully");
 
 			products.push(productWithId);
 			this.#writeFile(products);
+			console.log("Item added successfully");
 			return true;
 		}
 
@@ -129,8 +127,6 @@ class ProductManager {
 
 	updateProduct = (id, dataToUpdate) => {
 		this.products = this.#readFile();
-		console.log("ID TU UPDATE ====> ", id);
-		console.log("DATA TU UPDATE ====> ", dataToUpdate);
 		const productToFind = this.products.find((product) => product.id === id);
 		if (productToFind) {
 			return this.#updateProduct(productToFind, dataToUpdate);
