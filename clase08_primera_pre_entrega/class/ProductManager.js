@@ -110,12 +110,12 @@ class ProductManager {
 	addProduct = (product) => {
 		let validateProductToAdd = this.#validateProduct(product);
 		let productId = this.#getNextId();
-		let products = this.#readFile();
+		this.products = this.#readFile();
 
 		if (validateProductToAdd) {
 			const productWithId = { ...product, id: productId };
 
-			products.push(productWithId);
+			this.products.push(productWithId);
 			this.#writeFile(products);
 			console.log("Item added successfully");
 			return true;
@@ -137,9 +137,9 @@ class ProductManager {
 	};
 
 	getProductById = (id) => {
-		const products = this.#readFile();
+		this.products = this.#readFile();
 
-		const productToFind = products.find((product) => product.id === id);
+		const productToFind = this.products.find((product) => product.id === id);
 
 		if (productToFind) {
 			console.log("Product Found: ", productToFind);
