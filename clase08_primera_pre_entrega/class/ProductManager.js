@@ -116,7 +116,7 @@ class ProductManager {
 			const productWithId = { ...product, id: productId };
 
 			this.products.push(productWithId);
-			this.#writeFile(products);
+			this.#writeFile(this.products);
 			console.log("Item added successfully");
 			return true;
 		}

@@ -50,18 +50,13 @@ class CartManager {
 		return newId;
 	}
 
-	addCart = (cart) => {
+	addCart = () => {
 		try {
 			const fileExists = this.#fileExists(this.path);
 			if (fileExists) {
 				const cartId = this.#getNextId();
-				const cartToBeAdded = [cart];
-				let validation = this.#validateCart(cartToBeAdded);
+				const cartToBeAdded = [];
 
-				if (!validation) {
-					console.log(`Cart Validation failed`);
-					return false;
-				}
 				this.carts = this.#readFile();
 				this.carts.push({ id: cartId, products: cartToBeAdded });
 				this.#writeFile(this.carts);
