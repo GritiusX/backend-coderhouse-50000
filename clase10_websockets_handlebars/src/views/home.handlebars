@@ -1,6 +1,18 @@
 <div>
-	yo soy home
-	{{{products}}}
+	<h1>Agregar Productos</h1>
+	<form action="/submit" method="POST">
+		<input type="text" name="name" placeholder="Ingrese nombre producto" />
+		<input type="number" name="price" placeholder="Ingrese precio producto" />
+		<button type="submit">Enviar</button>
+	</form>
+	<div class="home-products-container">
+		{{#each products}}
+			<div class="home-product">
+				<p>{{this.name}} -> precio: {{this.price}}</p>
+			</div>
+		{{/each}}
+	</div>
+
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="./js/index.js"></script>

@@ -1,5 +1,31 @@
 <div>
-	yo soy realTimeProducts
+	<h1>crear nuevo producto</h1>
+	<div class="flex-form">
+		<label for="title">Titulo:</label>
+		<input type="text" id="title" required />
+
+		<label for="description">descripcion:</label>
+		<input type="text" id="description" required />
+
+		<label for="price">precio:</label>
+		<input type="text" id="price" required />
+
+		<label for="code">codigo:</label>
+		<input type="text" id="code" required />
+
+		<label for="stock">stock:</label>
+		<input type="text" id="stock" required />
+
+		<label for="category">categoria:</label>
+		<input type="text" id="category" required />
+
+		<button onclick="createProduct()">Crear Producto</button>
+	</div>
+
+	<h2>productos en tiempo real</h2>
+	<div id="products" class="products-container">
+
+	</div>
 </div>
 <script src="/socket.io/socket.io.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/realTimeProducts.js"></script>

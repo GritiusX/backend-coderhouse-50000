@@ -1,0 +1,30 @@
+body {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	background: #ddffe8;
+}
+.home-products-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 5px;
+	column-gap: 5px;
+}
+.products-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 5px;
+	column-gap: 5px;
+}
+.home-product {
+	background-color: blue;
+	color: white;
+	width: 200px;
+}
+.socket-product {
+	background-color: red;
+	width: 200px;
+	color: white;
+}

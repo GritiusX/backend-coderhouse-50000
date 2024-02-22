@@ -1,0 +1,94 @@
+[
+  {
+    "title": "nuevo producto 1",
+    "description": "estamos agregando este producto desde postman",
+    "code": "3425",
+    "price": 234,
+    "status": true,
+    "stock": 1,
+    "thumbnails": [
+      "url1.com",
+      "url2.com"
+    ],
+    "id": 1
+  },
+  {
+    "title": "nuevo producto 3",
+    "description": "estamos agregando este producto desde postman",
+    "code": "123",
+    "price": 234,
+    "status": true,
+    "stock": 1,
+    "thumbnails": [
+      "url1.com",
+      "url2.com"
+    ],
+    "id": 3
+  },
+  {
+    "title": "nuevo producto 4",
+    "description": "estamos agregando este producto desde postman",
+    "code": "123",
+    "price": 234,
+    "status": true,
+    "stock": 1,
+    "thumbnails": [
+      "url1.com",
+      "url2.com"
+    ],
+    "id": 4
+  },
+  {
+    "title": "POSTMAN PRODUCTO 2",
+    "description": "BORRE EL PROD 2 Y ESTOY AGREGANDO NUEVAMENTE UN PRODUCTO 2",
+    "code": "123",
+    "price": 234,
+    "status": true,
+    "stock": 1,
+    "thumbnails": [
+      "url1.com",
+      "url2.com"
+    ],
+    "id": 2
+  },
+  {
+    "title": "POSTMAN PRODUCTO 5",
+    "description": "BORRE EL PROD 2 Y ESTOY AGREGANDO NUEVAMENTE UN PRODUCTO 2",
+    "code": "123",
+    "price": 234,
+    "status": true,
+    "stock": 1,
+    "thumbnails": [],
+    "id": 5
+  },
+  {
+    "title": "POSTMAN PRODUCTO 6",
+    "description": "BORRE EL PROD 2 Y ESTOY AGREGANDO NUEVAMENTE UN PRODUCTO 2",
+    "code": "666",
+    "price": 666,
+    "status": true,
+    "stock": 666,
+    "thumbnails": [
+      "esteThumbnail"
+    ],
+    "id": 6
+  },
+  {
+    "title": "POSTMAN PRODUCTO 7",
+    "description": "BORRE EL PROD 2 Y ESTOY AGREGANDO NUEVAMENTE UN PRODUCTO 2",
+    "code": "777",
+    "price": 777,
+    "status": true,
+    "stock": 777,
+    "id": 7
+  },
+  {
+    "title": "POSTMAN PRODUCTO 8",
+    "description": "POSTMAN PRODUCTO 8",
+    "code": "888",
+    "price": 888,
+    "stock": 888,
+    "status": true,
+    "id": 8
+  }
+]

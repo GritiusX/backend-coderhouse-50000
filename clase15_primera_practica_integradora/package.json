@@ -1,20 +1,19 @@
 {
-	"name": "clase10_websockets_handlebars",
+	"name": "clase15_primera_practica_integradora",
 	"version": "1.0.0",
 	"description": "",
-	"main": "app.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start:dev": "nodemon src/app.js"
+		"start": "nodemon src/app.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"body-parser": "^1.20.2",
-		"dotenv": "^16.3.1",
 		"express": "^4.18.2",
 		"express-handlebars": "^7.1.2",
-		"socket.io": "^4.7.2"
+		"mongoose": "^8.1.3",
+		"nodemon": "^3.0.2"
 	}
 }
