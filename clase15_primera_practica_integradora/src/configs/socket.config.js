@@ -5,16 +5,22 @@ function setupSocket(httpServer) {
 	const io = new Server(httpServer);
 
 	// Set up event listeners
-	io.on("connection", (socket) => {
-		console.log("a user connected", socket.id);
+	io.on("connection", async (socket) => {
+		try {
+			const response = await axios.get("http://localhost:8080/api/messages");
+			io.emit("allMessagesGET", response.data.allMessages);
+		} catch (error) {
+			return console.error("Error sending data to /api/messages:", error);
+		}
 		socket.on("chatIncoming", async (data) => {
 			try {
-				console.log(data);
-				/* const response = await axios.post("/api/messages", { data });
-				console.log("Data sent to /api/messages:", response.data); */
+				const response = await axios.post(
+					"http://localhost:8080/api/messages",
+					data
+				);
+				return;
 			} catch (error) {
-				// Handle any errors that occur during the POST request
-				console.error("Error sending data to /api/messages:", error);
+				return console.error("Error sending data to /api/messages:", error);
 			}
 		});
 	});

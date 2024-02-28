@@ -1,3 +1,14 @@
-body {
-	color: red;
+#user-input {
+	background-color: blue;
+	color: white;
+}
+
+#chat-input {
+	background-color: red;
+	color: white;
+}
+
+.socket-message {
+	display: flex;
+	background-color: greenyellow;
 }

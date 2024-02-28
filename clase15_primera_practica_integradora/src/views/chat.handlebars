@@ -1,11 +1,18 @@
 <div>
 	<h1>Chat</h1>
-	<form action="" id="message-form">
-		<input type="text" id="user-input" style="background-color: blue;" />
-
-		<input type="text" id="chat-input" style="background-color: red;" />
+	<form id="message-form">
+		<div style="display: flex;">
+			<span>User:</span>
+			<input type="text" id="user-input" />
+		</div>
+		<div style="display: flex;">
+			<span>message:</span>
+			<input type="text" id="chat-input" />
+		</div>
 		<button onclick="createProduct()">Submit</button>
 	</form>
+	<div id="messages-container">
+	</div>
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chat.js"></script>
