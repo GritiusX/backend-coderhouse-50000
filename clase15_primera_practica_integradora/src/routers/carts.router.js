@@ -3,7 +3,7 @@ const {
 	controllerAddCart,
 	controllerGetCartById,
 	controllerAddProductToCartById,
-} = require("../controllers/cartsControllers.js");
+} = require("../controllers/carts.controller.js");
 
 const router = Router();
 

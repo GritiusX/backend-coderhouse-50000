@@ -3,12 +3,11 @@ const handlebars = require("express-handlebars");
 const viewsRouter = require("./routes/viewsRouter");
 const { Server } = require("socket.io");
 const { port } = require("./configs/server.config");
-const bodyParser = require("body-parser");
 
 // Express
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // con esto puede recibir parametros por url
 const httpServer = app.listen(port, () => {
 	console.log("Server running on port " + port);
 });

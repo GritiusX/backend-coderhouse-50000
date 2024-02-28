@@ -1,5 +1,5 @@
-const CartManager = require("../class/CartManager.js");
-const ProductManager = require("../class/ProductManager.js");
+const CartManager = require("../dao/fs/CartManager.js");
+const ProductManager = require("../dao/fs/ProductManager.js");
 const path = require("path");
 const cartsUrl = path.join(__dirname, "..", "json", "cart.json");
 const productUrl = path.join(__dirname, "..", "json", "products.json");

@@ -83,12 +83,16 @@
     "id": 7
   },
   {
-    "title": "POSTMAN PRODUCTO 8",
-    "description": "POSTMAN PRODUCTO 8",
-    "code": "888",
-    "price": 888,
-    "stock": 888,
+    "title": "asd",
+    "description": "MODIFICAMOS PRODUCTO 8",
+    "code": "8888",
+    "price": 8888,
+    "stock": 8888,
     "status": true,
-    "id": 8
+    "id": 8,
+    "thumbnails": [
+      "asdasd",
+      "8888"
+    ]
   }
 ]
